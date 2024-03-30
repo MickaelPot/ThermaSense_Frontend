@@ -2,6 +2,7 @@ import './dashboard.css';
 import {themeDasboard} from "./themeDashboard.js";
 import {courbe} from "./courbe.js";
 import {affichageTemperature} from "./affichageTemperature.js";
+import {deconnexion} from "./main.js";
 
 
 export const dashboard= ()=>{
@@ -30,7 +31,7 @@ export const dashboard= ()=>{
             <li><a href="#"><i class='bx bx-message-square-dots'></i>${nom_menu_capteurs}</a></li>
             <li><a href="#"><i class='bx bx-cog'></i>${nom_menu_compte}</a></li>
         </ul>
-        <ul class="side-menu">
+        <ul class="side-menu" id="deconnexion">
             <li>
                 <a href="#" class="logout">
                     <i class='bx bx-log-out-circle'></i>

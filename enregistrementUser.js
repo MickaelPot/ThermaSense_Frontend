@@ -67,11 +67,10 @@ export function enregistrementUser() {
             fetch(URL, requestOptions)
                 .then((response) => response.text())
                 .then((result) => validation(result))
-                .catch((error) => console.log("test"));
         }
     });
 
-    const validation= (result) =>{
+    function validation(result) {
         const reponse = JSON.parse(result);
         const message_erreur= document.getElementById("error-recording");
         if(reponse.message === "mail existant"){
@@ -79,7 +78,7 @@ export function enregistrementUser() {
         }
         if(reponse.message === "success"){
             message_erreur.innerHTML="";
-            const container = document.getElementById('container');
+            const container = document.getElementById('fenetre');
             container.classList.remove("active");
         }
     }

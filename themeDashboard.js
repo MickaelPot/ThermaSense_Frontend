@@ -1,3 +1,5 @@
+import {deconnexion} from "./main.js";
+
 export const themeDasboard = () =>{
     const sideLinks = document.querySelectorAll('.sidebar .side-menu li a:not(.logout)');
 
@@ -36,5 +38,10 @@ export const themeDasboard = () =>{
         } else {
             document.body.classList.remove('dark');
         }
+    });
+
+    const deco = document.getElementById("deconnexion");
+    deco.addEventListener("click",() => {
+        deconnexion()
     });
 }
