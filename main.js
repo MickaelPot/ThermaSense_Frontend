@@ -33,7 +33,7 @@ export function authentification(){
 }
 
 export function deconnexion(){
-    document.cookie = 'mon_token' + "=;Secure; SameSite=None; expires=Thu, 01 Jan 1970 00:00:00 UTC; ;";
+    document.cookie = 'mon_token' + "=; SameSite=None; expires=Thu, 01 Jan 1970 00:00:00 UTC; ;";
     authentification();
 }
 

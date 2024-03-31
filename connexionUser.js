@@ -63,7 +63,7 @@ export function connexionUser() {
             }else{
                 //Copie du token dans les cookies =>expiration dans une heure
                 const temps_seconde= 3600;
-                document.cookie = `mon_token=${reponse.token}; Secure; SameSite=None; expires=${new Date(Date.now() + temps_seconde * 1000).toUTCString()}`;
+                document.cookie = `mon_token=${reponse.token}; SameSite=None; expires=${new Date(Date.now() + temps_seconde * 1000).toUTCString()}`;
                 authentification();
             }
         }
