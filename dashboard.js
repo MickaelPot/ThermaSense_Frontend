@@ -1,6 +1,6 @@
 import './dashboard.css';
 import {themeDasboard} from "./themeDashboard.js";
-import {courbe} from "./courbe.js";
+import {getTemperatureByDay, getTemperatureByWeek, selecteurTemperature} from "./courbe.js";
 import {affichageTemperature} from "./affichageTemperature.js";
 import {deconnexion} from "./main.js";
 
@@ -84,6 +84,7 @@ export const dashboard= ()=>{
                         <i class='bx bx-filter'></i>
                         <i class='bx bx-plus'></i>
                     </div>
+                    <button id="changeMode">Sur 5 jours</button>
                     <canvas id="acquisitions">
                 </div>
 
@@ -96,8 +97,9 @@ export const dashboard= ()=>{
     </div>
 `;
     themeDasboard();
-    courbe();
+    getTemperatureByDay();
     affichageTemperature();
-    // Lancer la requête toutes les 10 seco(((((((((ndes
+    selecteurTemperature();
+    // Lancer la requête toutes les 30 secondes
     setInterval(affichageTemperature, 30000);
 }
